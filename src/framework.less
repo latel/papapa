@@ -1,0 +1,62 @@
+.papapa-keyboard {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    transform: translate3d(0, 100%, 0);
+    transition: transform .4s;
+}
+
+.papapa-keyboard.papapa-keyboard-popup {
+    transform: translate3d(0, 0, 0);
+    transition: transform .1s; /* 收起时速度要快 */
+}
+
+.papapa-target {
+    overflow: hidden;
+}
+
+.papapa-target-input {
+    position: relative;
+    display: inline-block;
+    padding-right: 2px;
+    overflow: hidden;
+}
+
+.papapa-target-input:before {
+    content: none;
+    width: 1px;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    opacity: 0;
+    background-color: #141414;
+    animation: fadein 1s ease infinite;
+    transform: translate3d(0, -50%, 0);
+}
+
+.papapa-target-cursor .papapa-target-input:before {
+    content: "";
+}
+
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
