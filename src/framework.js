@@ -87,10 +87,12 @@ class PapapaFramework {
         if (this._dispatchEvent('popup')) {
             this._class.add(PapapaFramework.ClassNames.Popup);
             this.isPopup = true;
-            if (this.$target && !this.value) {
-                this._class.remove(PapapaFramework.ClassNames.HasPlaceHolderVisible);
+            if (this.$target) {
                 this.$target.classList.add(PapapaFramework.ClassNames.Cursor);
-                this.$target.children[0].innerHTML = '';
+                if (!this.value) {
+                    this._class.remove(PapapaFramework.ClassNames.HasPlaceHolderVisible);
+                    this.$target.children[0].innerHTML = '';
+                }
             }
         }
         else {
@@ -102,11 +104,14 @@ class PapapaFramework {
         if (this._dispatchEvent('fold')) {
             this._class.remove(PapapaFramework.ClassNames.Popup);
             this.isPopup = false;
-            if (!this.value) {
-                this.$target.children[0].innerHTML = this._options.placeHolder;
-                this._class.add(PapapaFramework.ClassNames.HasPlaceHolderVisible);
-                if (this.$target) {
-                    this.$target.classList.remove(PapapaFramework.ClassNames.Cursor);
+            if (this.$target) {
+                this.$target.classList.remove(PapapaFramework.ClassNames.Cursor);
+                if (!this.value) {
+                    this.$target.children[0].innerHTML = this._options.placeHolder;
+                    this._class.add(PapapaFramework.ClassNames.HasPlaceHolderVisible);
+                    if (this.$target) {
+                        this.$target.classList.remove(PapapaFramework.ClassNames.Cursor);
+                    }
                 }
             }
         }
@@ -326,10 +331,12 @@ class PapapaFramework {
                 case 16:
                     self.shiftLock = true;
                     self._class.add(PapapaFramework.ClassNames.ShiftLock);
+                    self._dispatchEvent('shiftLockChange', true);
                     break;
                 case 20:
                     self.capsLock = true;
                     self._class.add(PapapaFramework.ClassNames.CapsLock);
+                    self._dispatchEvent('capsLockChange', true);
                     break;
                 default:
                     break;
@@ -340,11 +347,13 @@ class PapapaFramework {
                 case 16:
                     self.shiftLock = false;
                     self._class.remove(PapapaFramework.ClassNames.ShiftLock);
+                    self._dispatchEvent('shiftLockChange', false);
                     break;
 
                 case 20:
                     self.capsLock = false;
                     self._class.remove(PapapaFramework.ClassNames.CapsLock);
+                    self._dispatchEvent('capsLockChange', false);
                     break;
 
                 case 8:

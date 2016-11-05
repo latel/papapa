@@ -1,0 +1,26 @@
+{
+  "name": "papapa",
+  "description": "customizable virtual keyboard for mobile.",
+  "main": "dist/papapa.min.js",
+  "authors": [
+    "kevinnwang <latelx64@icloud.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "keyboard",
+    "virtual"
+  ],
+  "homepage": "https://github.com/latel/papapa",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}

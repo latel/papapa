@@ -1,7 +1,7 @@
 {
   "name": "papapa",
   "version": "1.0.0",
-  "description": "a customizable virtual keyboard for mobile.",
+  "description": "customizable virtual keyboard for the frontend.",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
