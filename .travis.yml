@@ -3,11 +3,8 @@ sudo: false
 branches:
   only:
   - master
-before_install:
-- openssl aes-256-cbc -K $encrypted_3d71b24810fe_key -iv $encrypted_3d71b24810fe_iv
-  -in .travis/id_rsa_papapa.enc -out ~\/.ssh/id_rsa_papapa -d
 install:
 - npm install -g mocha
 - npm install
 script:
-- npm test
+- npm dist
