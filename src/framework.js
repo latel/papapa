@@ -27,12 +27,13 @@ const ClassNames = { // 键盘的样式Hooks
         Landscape: 'landscape'
     };
 
+
 class PapapaFramework {
     constructor(template, options) {
         this._index = PapapaFramework.index++;
         this._options = options = options || {}; // 键盘实例的配置
         this._template = template || tplKeyboard;
-        this._state = { // 键盘实例可用的状态
+        this._states = { // 键盘实例可用的状态
             normal: true
         };
         this._events = {}; // 记录注册的事件
@@ -43,9 +44,8 @@ class PapapaFramework {
         this.maxLength = Infinity;
         this.isPopup = false; // 键盘是否已弹起
         this.value = ''; // 当前的值
-        this.isEmpty = true; // 当前值是否为空
-        this.isDisabled = false; // 是否被禁用
-        this.hasPlaceHolder = false; // 是否有placeholder
+        this.disabled = false; // 是否被禁用
+        this.placeHolder = false; // 是否有placeholder
         this.hasPlaceHolderVisible = false; // placeholder是否可见
         this.direction = Direction.Portrait;
         this.capsLock = false;
@@ -78,7 +78,7 @@ class PapapaFramework {
                 }
             }
             else {
-                this._dispatchEvent('unchange', currentValue, newValue)
+                this._dispatchEvent('unchange', currentValue, newValue);
             }
         }
     }

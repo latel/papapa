@@ -3,4 +3,94 @@
  * Copyright 2016, kevinnwang <latelx64@icloud.com>
  * MIT license
  */
-.papapa-keyboard{position:fixed;left:0;bottom:0;width:100%;transform:translate3d(0,100%,0);transition:transform .4s}.papapa-keyboard.papapa-keyboard-popup{transform:translateZ(0);transition:transform .1s}.papapa-target{overflow:hidden}.papapa-target-input{position:relative;display:inline-block;padding-right:2px;overflow:hidden}.papapa-target-input:before{content:none;width:1px;height:90%;position:absolute;top:50%;right:0;opacity:0;background-color:#141414;animation:fadein 1s ease infinite;transform:translate3d(0,-50%,0)}.papapa-target-cursor .papapa-target-input:before{content:""}@-webkit-keyframes fadein{0%{opacity:0}to{opacity:1}}@keyframes fadein{0%{opacity:0}to{opacity:1}}.papapa-keyboard-numpad{border-top:1px solid hsla(0,0%,70%,.5)}.papapa-keyboard-numpad .pop-cnt-txt{text-align:center;background:#fff;opacity:1}.papapa-keyboard-numpad ul{width:100%;padding:0;list-style:none;margin:0}.papapa-keyboard-numpad li{float:left;height:5.3rem;line-height:5.3rem;width:33.3%;border-bottom:1px solid hsla(0,0%,70%,.5);border-right:1px solid hsla(0,0%,70%,.5);box-sizing:border-box}.papapa-keyboard-numpad li:nth-child(3n){width:33.3%}.papapa-keyboard-numpad li:nth-child(10){background:#d5d8db}.papapa-keyboard-numpad li:nth-child(12){background:#d5d8db;font-size:2.5rem;color:#000}.papapa-keyboard-numpad li.papapa-keyboard-key--tap{background-color:#999!important}
+.papapa-keyboard {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  transform: translate3d(0, 100%, 0);
+  transition: transform .4s;
+}
+.papapa-keyboard.papapa-keyboard-popup {
+  transform: translate3d(0, 0, 0);
+  transition: transform .1s;
+  /* 收起时速度要快 */
+}
+.papapa-target {
+  overflow: hidden;
+}
+.papapa-target-input {
+  position: relative;
+  display: inline-block;
+  padding-right: 2px;
+  overflow: hidden;
+}
+.papapa-target-input:before {
+  content: none;
+  width: 1px;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  opacity: 0;
+  background-color: #141414;
+  animation: fadein 1s ease infinite;
+  transform: translate3d(0, -50%, 0);
+}
+.papapa-target-cursor .papapa-target-input:before {
+  content: "";
+}
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.papapa-keyboard-numpad {
+  border-top: 1px solid rgba(179, 179, 179, 0.5);
+}
+.papapa-keyboard-numpad .pop-cnt-txt {
+  text-align: center;
+  background: #fff;
+  opacity: 1;
+}
+.papapa-keyboard-numpad ul {
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.papapa-keyboard-numpad li {
+  float: left;
+  height: 5.3rem;
+  line-height: 5.3rem;
+  width: 33.3%;
+  border-bottom: 1px solid rgba(179, 179, 179, 0.5);
+  border-right: 1px solid rgba(179, 179, 179, 0.5);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.papapa-keyboard-numpad li:nth-child(3n) {
+  width: 33.3%;
+}
+.papapa-keyboard-numpad li:nth-child(10) {
+  background: #d5d8db;
+}
+.papapa-keyboard-numpad li:nth-child(12) {
+  background: #d5d8db;
+  font-size: 2.5rem;
+  color: #000;
+}
+.papapa-keyboard-numpad li.papapa-keyboard-key--tap {
+  background-color: #999 !important;
+}

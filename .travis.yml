@@ -6,7 +6,7 @@ branches:
   only:
   - master
 install:
-- npm install -g mocha
+- npm install -g mocha gulp webpack
 - npm install
 script:
 - npm run dist
